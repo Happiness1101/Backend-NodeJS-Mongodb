@@ -13,7 +13,9 @@ const checkToken = (req, res, next) => {
                     msg: "token is invalid"
                 })
             } else {
-                req.decoded = decoded;
+                req.aaa = decoded;
+                console.log("decode", req.aaa);
+                console.log(`enconde ==> ${req.aaa.username}`);
                 next();
             }
         })

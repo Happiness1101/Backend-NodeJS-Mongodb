@@ -13,7 +13,7 @@ router.route("/:username").get(middleware.checkToken, (req, res) => {
     });
 });
 
-router.route("/login").post(middleware.checkToken, (req, res) => {
+router.route("/login").post((req, res) => {
     User.findOne({ username: req.body.username }, (err, result) => {
         if (err) return res.status(500).json({ message: err });
         if (result === null) {

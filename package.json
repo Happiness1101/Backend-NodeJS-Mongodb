@@ -16,6 +16,7 @@
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "faker": "^4.1.0",
+        "heroku": "^7.42.4",
         "jsonwebtoken": "^8.5.1",
         "mongodb": "^3.5.9",
         "mongoose": "^5.9.24",
@@ -23,6 +24,6 @@
         "nodemon": "^2.0.4"
     },
     "engines": {
-        "node": "12.18.2"
+        "node": "12.x"
     }
 }
