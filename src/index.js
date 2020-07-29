@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const app = express();
 const url = "mongodb+srv://BlogUser:jame1101@cluster0.pmu5g.mongodb.net/myapp?retryWrites=true&w=majority";
 const URL = process.env.URL;
@@ -29,6 +29,7 @@ connection.once("open", () => {
 app.use(express.json());
 const userRoute = require('./routes/users');
 app.use("/user", userRoute);
+console.log(userRoute);
 
 app.route("/").get((req, res) => { res.json("First Rest API") })
 
