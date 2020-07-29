@@ -56,6 +56,10 @@ router.route("/register").post((req, res) => {
     });
 });
 
+router.route("/jame").get((req, res) => {
+    console.log("####################################");
+});
+
 router.route("/update/:username").patch(middleware.checkToken, (req, res) => {
     User.findOneAndUpdate({ username: req.params.username }, { $set: { password: req.body.password } },
         (err, result) => {
@@ -80,5 +84,4 @@ router.route("/delete/:username").delete(middleware.checkToken, (req, res) => {
         });
 });
 
-module.exports = router;
 module.exports = router;
