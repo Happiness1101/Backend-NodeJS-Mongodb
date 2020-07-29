@@ -57,6 +57,7 @@ router.route("/register").post((req, res) => {
 });
 
 router.route("/jame").get((req, res) => {
+    res.json("OK");
     console.log("####################################");
 });
 
