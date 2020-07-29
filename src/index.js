@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const port = process.env.PORT || 4000;
+const port = process.env.PORT;
 const app = express();
 const url = "mongodb+srv://BlogUser:jame1101@cluster0.pmu5g.mongodb.net/myapp?retryWrites=true&w=majority";
 const URL = process.env.URL;
@@ -32,7 +32,7 @@ app.use("/user", userRoute);
 
 app.route("/").get((req, res) => { res.json("First Rest API") })
 
-app.listen(port, () => console.log('Server on port 4000'));
+app.listen(port, () => console.log(`enconde ==> ${port}`));
 
 
 
