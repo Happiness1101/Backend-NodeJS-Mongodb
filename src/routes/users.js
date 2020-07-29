@@ -9,9 +9,20 @@ const router = express.Router();
 router.route("/:username").get(middleware.checkToken, (req, res) => {
     User.findOne({ username: req.params.username }, (err, result) => {
         if (err) res.status(500).json({ message: err });
-        res.json({ data: result, username: req.params.username, });
+        return res.json({ data: result, username: req.params.username, });
     });
 });
+
+router.route("/checkusername/:username").get((req, res) => {
+    User.findOne({ username: req.params.username }, (err, result) => {
+        if (err) res.status(500).json({ message: err });
+        if (result !== null) {
+            return res.json({ Status: true, });
+        } else {
+            return res.json({ Status: false, });
+        }
+    });
+})
 
 router.route("/login").post((req, res) => {
     User.findOne({ username: req.body.username }, (err, result) => {
@@ -69,4 +80,5 @@ router.route("/delete/:username").delete(middleware.checkToken, (req, res) => {
         });
 });
 
+module.exports = router;
 module.exports = router;
